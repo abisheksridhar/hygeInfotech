@@ -1,10 +1,11 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import Image from 'next/image';
 import { navItem,getIntouch} from '@/constants';
 
+
 const Footer = () => {
-  
+
   return (
        <Box sx={{
         borderRadius:{lg:"25% 25% 0 0 ",xs:"0%"},
@@ -63,8 +64,8 @@ const Footer = () => {
                   <Typography variant={'h6'}>
                     Links
                   </Typography>
-                  {navItem.map((item,index)=>{
-                    return (<Typography variant={'body2'} mt={2} key={index}>
+                  {navItem.map((item, index)=>{
+                    return (<Typography key={`link-${index}`} variant={'body2'} mt={2}>
                       {item.text}
                     </Typography> )
                   })}
